@@ -80,7 +80,8 @@ docker exec -it <container-id> /bin/bash
 
 We will then use `psql`, a terminal-based interface for PostgreSQL that allows us to query the database:
 ```commandline
-psql -U postgres
+psql -h <host> -p <port> -U postgres 
+# for my case, psql -h 0.0.0.0 -p 59790 -U postgres
 ```
 
 You can list tables and views as shown below:
@@ -109,7 +110,7 @@ postgres=# \dv
 
 Now you can query the tables constructed form the seeds, models and snapshots defined in the dbt project:
 ```sql
-SELEC * FROM <table_or_view_name>;
+SELECT * FROM <table_or_view_name>;
 ```
 
 # DBT Basics
