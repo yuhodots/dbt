@@ -2,12 +2,12 @@
 
 - <u>**Forked from [gmyrianthous/jaffle_shop](https://github.com/gmyrianthous/jaffle_shop)**</u>
 - Original Source: [Jaffle Shop dbt project published by dbt Labs](https://github.com/dbt-labs/jaffle_shop)
+- If you don't use amd64, recommend to change your image in Dokcerfile.
 
 # Running the project with Docker
 You'll first need to build and run the services via Docker (as defined in `docker-compose.yml`):
 ```bash
-$ docker-compose build
-$ docker-compose up
+$ docker compose up -d --build
 ```
 
 The commands above will run a Postgres instance and then build the dbt resources of Jaffle Shop as specified in the
@@ -39,7 +39,7 @@ And finally:
 dbt deps
 
 # Build seeds
-dbt seeds --profiles-dir profiles
+dbt seed --profiles-dir profiles
 
 # Build data models
 dbt run --profiles-dir profiles
@@ -56,6 +56,13 @@ Alternatively, you can run everything in just a single command:
 ```bash
 dbt build --profiles-dir profiles
 ```
+
+You can create a documentation with,
+``` bash
+dbt docs generate   # compile your dbt project and warehouse into json files
+dbt docs serve  # use these .json files to populate a local website
+```
+
 
 ## Querying Jaffle Shop data models on Postgres
 In order to query and verify the seeds, models and snapshots created in the dummy dbt project, simply follow the 

@@ -1,3 +1,4 @@
+profiles/.user.yml
 target/
 dbt_modules/
 logs/
