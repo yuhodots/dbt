@@ -59,8 +59,8 @@ dbt build --profiles-dir profiles
 
 You can create a documentation with,
 ``` bash
-dbt docs generate   # compile your dbt project and warehouse into json files
-dbt docs serve  # use these .json files to populate a local website
+dbt docs generate --profiles-dir profiles   # compile your dbt project and warehouse into json files
+dbt docs serve --profiles-dir profiles --port 8001  # use these .json files to populate a local website
 ```
 
 
@@ -81,7 +81,7 @@ docker exec -it <container-id> /bin/bash
 We will then use `psql`, a terminal-based interface for PostgreSQL that allows us to query the database:
 ```commandline
 psql -h <host> -p <port> -U postgres 
-# for my case, psql -h 0.0.0.0 -p 59790 -U postgres
+# for my case, psql -h 0.0.0.0 -p 5432 -U postgres
 ```
 
 You can list tables and views as shown below:
