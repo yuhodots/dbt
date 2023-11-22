@@ -2,6 +2,7 @@
 
 - <u>**Forked from [gmyrianthous/jaffle_shop](https://github.com/gmyrianthous/jaffle_shop)**</u>
 - Original Source: [Jaffle Shop dbt project published by dbt Labs](https://github.com/dbt-labs/jaffle_shop)
+- I modified the readme and compose file for my personal purposes.
 - If you don't use amd64, recommend to change your image in Dokcerfile.
 
 # Running the project with Docker
